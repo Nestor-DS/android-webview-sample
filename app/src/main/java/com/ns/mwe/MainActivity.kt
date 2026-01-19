@@ -56,7 +56,7 @@ fun WebViewScreen() {
                         request: WebResourceRequest?
                     ): Boolean {
                         val url = request?.url.toString()
-                        return !url.startsWith("http://192.168.1.48:3000/")
+                        return !url.startsWith()
                     }
                 }
 
@@ -65,7 +65,7 @@ fun WebViewScreen() {
                     "AndroidContext"
                 )
 
-                loadUrl("http://192.168.1.48:3000/")
+                loadUrl()
             }
         }
     )
