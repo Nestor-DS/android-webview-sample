@@ -195,3 +195,43 @@ class AndroidBridge {
 
 
 ```
+
+## Configurar tunel para dispositivo
+
+Verificar Conexión del Dispositivo
+
+```
+adb devices
+
+```
+
+Deberías ver tu dispositivo listado con estado device.
+
+## Configurar Túnel Reverso
+
+Si tu aplicación/servicio está corriendo en http://1.1.1.1:3000 (o cualquier otra IP:puerto), ejecuta:
+
+```
+adb reverse tcp:3000 tcp:3000
+
+```
+
+Este comando redirige el puerto 3000 del dispositivo al puerto 3000 de tu computadora
+
+## Verificar túneles activos:
+
+```
+adb reverse --list
+```
+
+## Eliminar un túnel específico:
+
+```
+adb reverse --remove tcp:3000
+```
+
+## Eliminar todos los tuneles
+
+```
+adb reverse --remove-all
+```
